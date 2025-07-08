@@ -1,105 +1,118 @@
-```markdown
-# HealthBridge 🏥🌐
+# MedCare 🏥💻
 
-![HealthBridge Banner](./assets/banner.png)
-
-*Connecting Patients with Verified Doctors Worldwide Through AI-Powered Healthcare*
+*A Full-Stack Medical Healthcare Application with Role-Based Access Control*
 
 ---
 
 ## 📖 Description
 
-**HealthBridge** is an innovative AI-powered healthcare platform that revolutionizes how patients discover and consult with medical professionals. Our platform bridges the gap between patients seeking quality healthcare and verified doctors worldwide, using advanced AI technology to provide intelligent matching based on symptoms, location, specialization, and personal preferences.
+**MedCare** is a comprehensive healthcare platform that connects patients with verified doctors through a modern web interface. Our platform provides secure appointment booking, medical record management, and consultation services with role-based access control for both patients and healthcare professionals.
 
-Whether you're looking for a local specialist for an in-person consultation or seeking expert medical advice from anywhere in the world, HealthBridge makes quality healthcare accessible, affordable, and convenient.
+Whether you're a patient seeking quality healthcare or a doctor managing your practice, MedCare offers an intuitive and secure platform for all your healthcare needs.
 
 ## ✨ Key Features
 
-### 🔍 **Intelligent Doctor Discovery**
-- AI-powered matching using LLaMA via Groq API
-- Filter doctors by specialization, location, language, and budget
-- Real-time availability checking
-- Comprehensive doctor profiles with certifications and ratings
+### 👨‍⚕️ **For Doctors**
+- **Patient Management**: View and manage assigned patients with detailed profiles
+- **Medical Records Review**: Access and review patient medical records securely
+- **Diagnosis Notes**: Create comprehensive diagnosis records with prescriptions
+- **Appointment Management**: View and update appointment statuses
+- **Professional Profile**: Manage credentials, specializations, and consultation fees
 
-### 👨‍⚕️ **Verified Medical Professionals**
-- Secure doctor verification system
-- Detailed profiles with skills, certifications, and experience
-- Transparent pricing for consultations
-- Multi-language support for global accessibility
+### 🏥 **For Patients**
+- **Easy Appointment Booking**: Book appointments with qualified doctors
+- **Medical Records Upload**: Securely upload and manage medical documents
+- **Appointment History**: Track past and upcoming appointments with ratings
+- **Secure Payments**: Process consultation fees through integrated payment system
+- **Profile Management**: Maintain personal and medical information
 
-### 🤖 **AI Symptom Checker**
-- Advanced symptom analysis using natural language processing
-- Preliminary health assessments
-- Intelligent doctor recommendations based on symptoms
-- Health risk evaluation and triage
+### 🔐 **Security & Authentication**
+- JWT-based authentication with role-based access control
+- Secure password hashing with bcrypt
+- Protected routes based on user roles
+- Session management with token refresh
 
-### 💬 **Secure Consultation Platform**
-- End-to-end encrypted video consultations
-- In-app messaging with medical professionals
-- Appointment scheduling and management
-- Digital prescription and medical record storage
-
-### 🌍 **Global Accessibility**
-- Multi-language translation support
-- Location-based and remote consultation options
-- Google Maps integration for physical visit directions
-- Currency conversion for international consultations
-
-### 📱 **User-Friendly Interface**
-- Intuitive Streamlit-based web interface
-- Responsive design for mobile and desktop
-- Dark/light mode support
-- Accessibility features for all users
+### 💾 **Data Management**
+- MongoDB integration for scalable data storage
+- File upload to AWS S3 with secure access
+- Email notifications via AWS SES
+- Stripe payment processing integration
 
 ## 🛠️ Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| **AI/ML** | LLaMA (via Groq API) |
-| **Frontend** | Streamlit |
-| **Backend** | Python |
-| **Database** | MongoDB / Firebase |
-| **Maps & Location** | Google Maps API |
-| **Authentication** | Firebase Auth |
-| **Deployment** | Streamlit Cloud |
-| **Version Control** | Git & GitHub |
+### Frontend
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | Modern UI framework with hooks |
+| **TypeScript** | Type-safe development |
+| **Tailwind CSS** | Utility-first CSS framework |
+| **React Router** | Client-side routing |
+| **Lucide React** | Beautiful icon library |
+| **Vite** | Fast build tool and dev server |
+
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| **FastAPI** | High-performance Python web framework |
+| **MongoDB** | NoSQL database with Motor async driver |
+| **JWT** | Secure authentication tokens |
+| **AWS S3** | File storage and management |
+| **AWS SES** | Email notification service |
+| **Stripe** | Payment processing |
+| **bcrypt** | Password hashing |
 
 ## 📸 Screenshots
 
-### Home Page
-![Home Page](./assets/screenshots/home_page.png)
+### Landing Page
+![Landing Page](./assets/screenshots/landing.png)
 
-### Doctor Discovery
-![Doctor Discovery](./assets/screenshots/doctor_discovery.png)
+### Patient Dashboard
+![Patient Dashboard](./assets/screenshots/patient-dashboard.png)
 
-### AI Symptom Checker
-![Symptom Checker](./assets/screenshots/symptom_checker.png)
+### Doctor Dashboard
+![Doctor Dashboard](./assets/screenshots/doctor-dashboard.png)
 
-### Consultation Interface
-![Consultation](./assets/screenshots/consultation.png)
+### Appointment Booking
+![Appointment Booking](./assets/screenshots/appointment-booking.png)
 
-### Doctor Profile
-![Doctor Profile](./assets/screenshots/doctor_profile.png)
+### Medical Records
+![Medical Records](./assets/screenshots/medical-records.png)
 
 ## 🚀 Setup Instructions
 
 ### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-- Git
+- Node.js 18+ and npm
+- Python 3.10+
+- MongoDB (local or Atlas)
+- AWS Account (for S3 and SES)
+- Stripe Account (for payments)
 
-### Installation Steps
+### Frontend Setup
 
-1. **Clone the repository**
+1. **Install dependencies**
    ```bash
-   git clone https://github.com/yourusername/healthbridge.git
-   cd healthbridge
+   npm install
    ```
 
-2. **Create a virtual environment**
+2. **Start development server**
    ```bash
-   python -m venv healthbridge_env
-   source healthbridge_env/bin/activate  # On Windows: healthbridge_env\Scripts\activate
+   npm run dev
+   ```
+
+3. **Access the application**
+   - Open your browser and go to `http://localhost:5173`
+
+### Backend Setup
+
+1. **Navigate to backend directory**
+   ```bash
+   cd backend
+   ```
+
+2. **Create virtual environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. **Install dependencies**
@@ -108,173 +121,172 @@ Whether you're looking for a local specialist for an in-person consultation or s
    ```
 
 4. **Set up environment variables**
-   - Copy `.env.example` to `.env`
-   - Fill in your API keys (see section below)
+   - Copy `backend/.env.example` to `backend/.env`
+   - Fill in your API keys and configuration
 
-5. **Run the application**
+5. **Run the backend server**
    ```bash
-   streamlit run app.py
+   python main.py
    ```
 
-6. **Access the application**
-   - Open your browser and go to `http://localhost:8501`
+6. **API Documentation**
+   - Swagger UI: `http://localhost:8000/docs`
+   - ReDoc: `http://localhost:8000/redoc`
 
-## 🔐 Required API Keys & Environment Setup
+## 🔐 Environment Variables
 
-Create a `.env` file in the root directory with the following variables:
-
+### Backend (.env)
 ```env
-# Groq API (for LLaMA)
-GROQ_API_KEY=your_groq_api_key_here
+# Database
+DATABASE_URL=mongodb://localhost:27017
+DATABASE_NAME=medcare
 
-# Google Maps API
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+# JWT Authentication
+SECRET_KEY=your-super-secret-jwt-key-here
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-# Firebase Configuration
-FIREBASE_API_KEY=your_firebase_api_key
-FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-FIREBASE_PROJECT_ID=your_project_id
-FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-FIREBASE_APP_ID=your_app_id
+# Stripe Configuration
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
+STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
 
-# MongoDB (Alternative to Firebase)
-MONGODB_CONNECTION_STRING=your_mongodb_connection_string
+# AWS Configuration
+AWS_ACCESS_KEY_ID=your_aws_access_key_id
+AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
+AWS_REGION=us-east-1
+AWS_S3_BUCKET_NAME=medcare-files
+FROM_EMAIL=noreply@yourdomain.com
 
 # Application Settings
-SECRET_KEY=your_secret_key_here
-DEBUG=True
+CORS_ORIGINS=http://localhost:3000,http://localhost:5173
 ```
 
 ### How to Get API Keys:
 
-1. **Groq API Key**: Visit [Groq Console](https://console.groq.com) and create an account
-2. **Google Maps API Key**: Go to [Google Cloud Console](https://console.cloud.google.com) and enable Maps API
-3. **Firebase**: Create a project at [Firebase Console](https://console.firebase.google.com)
-4. **MongoDB**: Sign up at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+1. **MongoDB**: Sign up at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or use local MongoDB
+2. **Stripe**: Create account at [Stripe Dashboard](https://dashboard.stripe.com)
+3. **AWS S3 & SES**: Set up at [AWS Console](https://console.aws.amazon.com)
 
-## 📁 Folder Structure
+## 📁 Project Structure
 
 ```
-healthbridge/
-├── app.py                      # Main Streamlit application
-├── requirements.txt            # Python dependencies
-├── .env.example               # Environment variables template
-├── README.md                  # Project documentation
+medcare/
+├── src/                           # Frontend React application
+│   ├── components/               # React components
+│   │   ├── auth/                # Authentication components
+│   │   ├── patient/             # Patient-specific components
+│   │   ├── doctor/              # Doctor-specific components
+│   │   └── ui/                  # Reusable UI components
+│   ├── contexts/                # React contexts (Auth, etc.)
+│   └── main.tsx                 # Application entry point
 ├── 
-├── components/                # Reusable UI components
-│   ├── __init__.py
-│   ├── doctor_card.py
-│   ├── symptom_checker.py
-│   └── consultation_interface.py
+├── backend/                      # FastAPI backend
+│   ├── routes/                  # API route handlers
+│   │   ├── patient.py          # Patient endpoints
+│   │   └── doctor.py           # Doctor endpoints
+│   ├── auth/                    # Authentication logic
+│   ├── services/                # External service integrations
+│   │   ├── stripe.py           # Payment processing
+│   │   ├── s3.py               # File storage
+│   │   └── ses.py              # Email service
+│   ├── models/                  # Data models
+│   ├── database.py             # Database operations
+│   └── main.py                 # FastAPI application
 ├── 
-├── services/                  # Business logic and API services
-│   ├── __init__.py
-│   ├── ai_service.py         # LLaMA/Groq integration
-│   ├── doctor_service.py     # Doctor management
-│   ├── patient_service.py    # Patient management
-│   └── consultation_service.py
-├── 
-├── database/                  # Database models and operations
-│   ├── __init__.py
-│   ├── models.py
-│   ├── firebase_db.py
-│   └── mongodb_db.py
-├── 
-├── utils/                     # Utility functions
-│   ├── __init__.py
-│   ├── auth.py
-│   ├── validators.py
-│   └── helpers.py
-├── 
-├── assets/                    # Static files
-│   ├── images/
-│   ├── icons/
-│   └── screenshots/
-├── 
-├── tests/                     # Test files
-│   ├── __init__.py
-│   ├── test_ai_service.py
-│   └── test_doctor_service.py
-├── 
-└── docs/                      # Additional documentation
-    ├── API.md
-    ├── DEPLOYMENT.md
-    └── CONTRIBUTING.md
+├── package.json                 # Frontend dependencies
+├── tailwind.config.js          # Tailwind CSS configuration
+├── vite.config.ts              # Vite build configuration
+└── README.md                   # This file
 ```
 
-## 🔮 Future Improvements
+## 🔮 API Endpoints
 
-- **Mobile App Development**: Native iOS and Android applications
-- **Advanced AI Features**: Predictive health analytics and personalized recommendations
-- **Insurance Integration**: Direct insurance claim processing and coverage verification
-- **Telemedicine Hardware**: Integration with IoT health monitoring devices
-- **Blockchain Integration**: Secure medical record management using blockchain
-- **Voice Assistant**: Voice-enabled symptom reporting and consultation booking
-- **Mental Health Support**: Specialized AI for mental health screening and support
-- **Prescription Delivery**: Integration with pharmacy networks for medication delivery
-- **Health Analytics Dashboard**: Comprehensive health tracking and insights
-- **Multi-tenant Architecture**: Support for healthcare organizations and clinics
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
 
-## 👥 Contributors
+### Patient Endpoints
+- `GET /api/patient/profile` - Get patient profile
+- `PUT /api/patient/profile` - Update patient profile
+- `POST /api/patient/upload-medical-record` - Upload medical record
+- `GET /api/patient/medical-records` - Get patient's records
+- `GET /api/patient/doctors` - Get available doctors
+- `POST /api/patient/book-appointment` - Book appointment
+- `GET /api/patient/appointments` - Get patient appointments
 
-- **[Your Name]** - Lead Developer & Project Manager
-  - GitHub: [@yourusername](https://github.com/yourusername)
-  - LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+### Doctor Endpoints
+- `GET /api/doctor/profile` - Get doctor profile
+- `PUT /api/doctor/profile` - Update doctor profile
+- `GET /api/doctor/patients` - Get assigned patients
+- `GET /api/doctor/medical-records` - Get patient records
+- `POST /api/doctor/diagnosis` - Create diagnosis
+- `GET /api/doctor/appointments` - Get doctor appointments
 
-### Special Thanks
-- **Lablab.ai** - For hosting this amazing hackathon
-- **Groq** - For providing powerful AI infrastructure
-- **Streamlit** - For the incredible framework
-- **Open Source Community** - For all the amazing libraries and tools
+## 🧪 Demo Accounts
+
+### Patient Account
+- **Email**: `patient@demo.com`
+- **Password**: `password`
+
+### Doctor Account
+- **Email**: `doctor@demo.com`
+- **Password**: `password`
+
+## 🔒 Security Features
+
+- **Authentication**: JWT tokens with role-based access
+- **Data Protection**: Encrypted passwords with bcrypt
+- **File Security**: Secure S3 uploads with signed URLs
+- **Input Validation**: Comprehensive data validation
+- **CORS Protection**: Configured for secure cross-origin requests
+
+## 🚀 Deployment
+
+### Frontend (Netlify/Vercel)
+```bash
+npm run build
+# Deploy dist/ folder to your hosting provider
+```
+
+### Backend (Production)
+```bash
+# Using gunicorn for production
+pip install gunicorn
+gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+```
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Here's how you can help:
-
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-Please read our [Contributing Guidelines](./docs/CONTRIBUTING.md) for more details.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Contact & Support
+## 📞 Support
 
-### Project Maintainer
-- **Email**: your.email@example.com
-- **Twitter**: [@yourusername](https://twitter.com/yourusername)
-- **Project Link**: [https://github.com/yourusername/healthbridge](https://github.com/yourusername/healthbridge)
-
-### Hackathon Submission
-- **Lablab.ai Profile**: [Your Lablab Profile](https://lablab.ai/u/yourprofile)
-- **Submission**: [HealthBridge Hackathon Entry](https://lablab.ai/event/hackathon-name/healthbridge)
+For support and questions:
+- Create an issue in the repository
+- Check the API documentation at `/docs`
+- Review the code comments and documentation
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for the Lablab.ai Hackathon**
+**Built with ❤️ for Modern Healthcare**
 
-*Making Healthcare Accessible to Everyone, Everywhere*
+*Connecting Patients and Doctors Through Technology*
 
-[![Made with Streamlit](https://img.shields.io/badge/Made%20with-Streamlit-red.svg)](https://streamlit.io/)
-[![Powered by Groq](https://img.shields.io/badge/Powered%20by-Groq-blue.svg)](https://groq.com/)
-[![AI Enhanced](https://img.shields.io/badge/AI-Enhanced-green.svg)](https://github.com/yourusername/healthbridge)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green.svg)](https://fastapi.tiangolo.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-blue.svg)](https://tailwindcss.com/)
 
 </div>
-```
-
-Here's your complete README.md file in pure markdown format! You can copy this entire content and paste it directly into your README.md file. Just remember to:
-
-1. Replace placeholder information like `yourusername`, `your.email@example.com`, etc. with your actual details
-2. Add actual screenshots to the `./assets/screenshots/` directory
-3. Update the GitHub repository URL to match your actual repository
-4. Customize the contributor section with your real information
-
-The README is now ready for your HealthBridge project submission to the Lablab.ai hackathon!
