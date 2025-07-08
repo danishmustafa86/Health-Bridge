@@ -110,22 +110,22 @@ Patient Input → Groq AI Processing → LLaMA Analysis → Medical Insights →
 ## 📸 Screenshots
 
 ### AI Symptom Checker
-![AI Symptom Checker](./assets/screenshots/ai-symptom-checker.png)
+![AI Symptom Checker](./pictures/ai analysis.png)
 
 ### AI-Enhanced Doctor Dashboard
-![AI Doctor Dashboard](./assets/screenshots/ai-doctor-dashboard.png)
+![AI Doctor Dashboard](./pictures/doctor dashboard.png)
 
 ### Landing Page
-![Landing Page](./assets/screenshots/landing.png)
+![Landing Page](./pictures/landingpage of healdthbridge.png)
 
 ### Patient Dashboard
-![Patient Dashboard](./assets/screenshots/patient-dashboard.png)
+![Patient Dashboard](./pictures/patiend dashboard.png)
 
 ### Appointment Booking
-![Appointment Booking](./assets/screenshots/appointment-booking.png)
+![Appointment Booking](./pictures/appintment 2222.png)
 
 ### Medical Records with AI Analysis
-![Medical Records](./assets/screenshots/medical-records-ai.png)
+![Medical Records](./pictures/medical records.png)
 
 ## 🚀 Setup Instructions
 
