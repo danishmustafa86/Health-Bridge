@@ -46,7 +46,7 @@ export default function MedicalRecords() {
     }
 
     if (file.size > 10 * 1024 * 1024) { // 10MB limit
-      toast.error('File size must be less than 10MB');
+      toast.error('File size should be less than 10MB');
       return;
     }
 
